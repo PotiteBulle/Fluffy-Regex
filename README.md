@@ -78,11 +78,13 @@
 
 **Explication** : *Cette regex détecte les liens contenant des séquences aléatoires dans l'URL, souvent utilisées pour masquer des activités malveillantes ou pour générer des pages temporairement dans un usage malveillant.*
 
+
 - **Détection de mots déguisés par des caractères spéciaux ou des chiffres (Leet Speak)**:
 
 ``` \b([fF][uU][cC][kK]|[sS][hH][i1lL][tT]|[bB][i1lL][tT][cC][hH])\b```
 
 **Explication**: *Cette regex détecte les versions leet speak courantes de termes offensants où les lettres sont remplacées par des caractères visuellement similaires.*
+
 
 - **Détection d'injections de scripts (XSS Simple)**:
 
@@ -90,6 +92,7 @@
 
 **Explication**: *Cette expression permet de détecter des injections XSS basiques via des balises
 **script** ou des images avec un attribut **src** de type JavaScript.*
+
 
 - **Filtrage de textes obscurcis par des caractères similaires (comme O vs 0, I vs l)**:
 
