@@ -44,7 +44,7 @@
 **Explication** : *Cette regex capture les liens qui incluent des paramètres tels que "session", "token", ou "auth", qui peuvent être utilisés pour des sessions d'utilisateur ou des authentifications malveillantes.*
 
 
-- **Liens avec des requêtes GET suspectes**:
+- **Liens avec des requêtes GET suspectes (link token grab)**:
 
 ``` \b(?:http|https):\/\/[\w\-]+\.(?:com|net|org)\/\S*\?(?:\S*?[&?](?:id|key|token|password|secret)=) ```
 
