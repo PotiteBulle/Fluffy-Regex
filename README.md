@@ -67,28 +67,28 @@
 
 - **Liens avec des sous-domaines inhabituels**:
 
-``` \b(?:http|https):\/\/(?:[\w\-]{3,}\.){2,}[\w\-]+\.(?:com|net|org)\/\S* ```
+``` \b(?:http|https):\/\/(?:[\w\-]{3,}\.){2,}[\w\-]+\.(?:com|net|org)\/\S*```
 
 **Explication** : *Cette regex attrape les liens avec des sous-domaines inhabituels ou multiples, ce qui peut être un indicateur de manipulation ou de phishing.*
 
 
 - **Liens avec des séquences aléatoires**:
 
-``` \b(?:http|https):\/\/[\w\-]{10,}\.(?:com|net|org)\/\S*?[a-zA-Z0-9]{10,} ```
+``` \b(?:http|https):\/\/[\w\-]{10,}\.(?:com|net|org)\/\S*?[a-zA-Z0-9]{10,}```
 
 **Explication** : *Cette regex détecte les liens contenant des séquences aléatoires dans l'URL, souvent utilisées pour masquer des activités malveillantes ou pour générer des pages temporairement dans un usage malveillant.*
 
 
 - **Détection de mots déguisés par des caractères spéciaux ou des chiffres (Leet Speak)**:
 
-``` \b([fF][uU][cC][kK]|[sS][hH][i1lL][tT]|[bB][i1lL][tT][cC][hH])\b```
+``` \b([fF][uU][cC][kK]|[sS][hH][i1lL][tT]|[bB][i1lL][tT][cC][hH])```
 
 **Explication**: *Cette regex détecte les versions leet speak courantes de termes offensants où les lettres sont remplacées par des caractères visuellement similaires.*
 
 
 - **Détection d'injections de scripts (XSS Simple)**:
 
-``` (<\s*script.*?>.*?</\s*script\s*>|<\s*img\s+src\s*=\s*['\"]?javascript:.*?>)```
+``` \b(<\s*script.*?>.*?</\s*script\s*>|<\s*img\s+src\s*=\s*['\"]?javascript:.*?>)```
 
 **Explication**: *Cette expression permet de détecter des injections XSS basiques via des balises
 **script** ou des images avec un attribut **src** de type JavaScript.*
@@ -96,6 +96,6 @@
 
 - **Filtrage de textes obscurcis par des caractères similaires (comme O vs 0, I vs l)**:
 
-``` \b([o0]{1,2}[b8]{1,2}[s5]{1,2}c[3e]{1,2}[n9]{1,2})\b```
+``` \b([o0]{1,2}[b8]{1,2}[s5]{1,2}c[3e]{1,2}[n9]{1,2})```
 
 **Explication**: *Cette regex cible les mots obscurcis en combinant des caractères similaires, souvent utilisés pour contourner la modération (par exemple, remplacer des lettres par des chiffres).*
